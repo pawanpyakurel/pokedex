@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect} from 'react';
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 
-function App() {
+//components
+
+import { Spinner } from "./components/Spinner"
+
+//custom components
+import { getALLPokemons } from "./redux/actions/getAllPokemonsAction";
+
+// styles
+import GlobalStyle from "./App.styles";
+
+function App(props) {
+  
+  //hooks
+  const [ fetchingPokemons, setFetchingPokemons] = useState(null);
+
+  useEffect(() => {
+    const fetchAllPokemons = () =>{
+      return props.getALLPokemons(100);
+    }
+    fetchAllPokemons();
+  }, []) ;
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Spinner />
+    </>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  fetching: state.pokemons.fetching,
+  pokemons: state.pokemons.pokemons,
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      getALLPokemons
+    }
+  )(App)
+);
