@@ -15,21 +15,31 @@ import GlobalStyle from "./App.styles";
 function App(props) {
   
   //hooks
-  const [ fetchingPokemons, setFetchingPokemons] = useState(null);
+  const [isLoading, setisLoading] = useState(true)
+  const {getALLPokemons} = props;
 
   useEffect(() => {
-    const fetchAllPokemons = () =>{
-      return props.getALLPokemons(100);
-    }
-    fetchAllPokemons();
-  }, []) ;
+    getALLPokemons(1000);
+  }, [getALLPokemons]) ;
 
+  useEffect (() =>{
+    setTimeout(function() { //Start the timer
+      setisLoading(false) //After 2 second, set loding false
+    }, 2000)
 
+  }, [isLoading])
 
   return (
     <>
       <GlobalStyle />
-      <Spinner />
+      {
+        !!(props.fetching || isLoading) ?(
+          <Spinner />
+        )
+        :
+        <h1> welcome to pokedex</h1>
+      }
+      
     </>
   );
 }

@@ -24,7 +24,7 @@ export const pokemons = (state = initialState, action) => {
             return {
                 ...state,
                 fetching: false,
-                pokemons: action
+                pokemons: action.resPayload.results
             }
         case GET_ALL_POKEMONS_FAILURE :
             return{
