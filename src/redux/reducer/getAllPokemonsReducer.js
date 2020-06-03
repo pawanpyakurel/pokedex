@@ -6,11 +6,14 @@ import {
     GET_ALL_POKEMONS_FAILURE
 } from "../actions/Types";
 
+import { updatePokemons } from "../../utils";
+
 // reducer with initial state
 const initialState = {
     fetching: false,
     pokemons: null,
-    error: null
+    error: null,
+    updatePokemons: null
 };
 
 export const pokemons = (state = initialState, action) => {
@@ -24,13 +27,14 @@ export const pokemons = (state = initialState, action) => {
             return {
                 ...state,
                 fetching: false,
-                pokemons: action.resPayload.results
+                // pokemons: action.resPayload.results,
+                pokemons: updatePokemons (action.resPayload.results)
             }
         case GET_ALL_POKEMONS_FAILURE :
             return{
                 ...state,
                 fetching: false,
-                error: true
+                error: true,
             }
         default:
             return state;

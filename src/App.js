@@ -3,9 +3,9 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 //components
-
-import { Spinner } from "./components/Spinner"
-
+import { Spinner } from "./components/Spinner";
+import Home from "./containers/Home"
+ 
 //custom components
 import { getALLPokemons } from "./redux/actions/getAllPokemonsAction";
 
@@ -19,13 +19,13 @@ function App(props) {
   const {getALLPokemons} = props;
 
   useEffect(() => {
-    getALLPokemons(1000);
+    getALLPokemons(200);  //set load data 200
   }, [getALLPokemons]) ;
 
   useEffect (() =>{
     setTimeout(function() { //Start the timer
       setisLoading(false) //After 2 second, set loding false
-    }, 2000)
+    }, 1000)
 
   }, [isLoading])
 
@@ -37,7 +37,7 @@ function App(props) {
           <Spinner />
         )
         :
-        <h1> welcome to pokedex</h1>
+        <Home allPokemons = {props.pokemons}/>
       }
       
     </>
