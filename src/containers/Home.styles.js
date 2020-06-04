@@ -3,7 +3,7 @@ import styled from "styled-components";
 // import { colors } from "../config/theme"
 
 const HomeWrapper = styled.div `
-    margin: 0rem;
+    margin-top: 10rem;
     padding: 0rem;
 
     .CardContentWrapper{

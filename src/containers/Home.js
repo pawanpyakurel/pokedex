@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 //components
 import { Card } from "../components/Card";
-import LazyLoad from 'react-lazyload';
 
 //styles
 import { HomeWrapper} from "./Home.styles"

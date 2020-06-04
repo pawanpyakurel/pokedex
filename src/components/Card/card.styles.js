@@ -12,6 +12,7 @@ const CardWrapper = styled.div `
     border-radius: 0.7rem;
     color: ${colors.text};
     background: ${colors.darkBackground};
+    
     box-shadow: 1px 1px 5px 1px #000;
 
     &:hover {
@@ -19,7 +20,8 @@ const CardWrapper = styled.div `
         transform: scale(1.02);
     }
     .card_content{
-        background : #0b7d03;
+        // background : #0b7d03;
+        background-image: linear-gradient(90deg,#0b7d03,#035c7d);
         height: auto;
         width: 100%;
         border-radius: 0.7rem;

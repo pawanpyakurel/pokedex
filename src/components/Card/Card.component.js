@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 //components
@@ -11,7 +11,7 @@ import LazyLoad from 'react-lazyload';
 import { CardWrapper } from "./card.styles";
 
 
-const Card = ({pokemon_name, pokemon_URL, imageURL}) =>{
+const Card = ({pokemon_name, imageURL, searchText}) =>{
     //if dont use Redux for state management then this code will handle the images
     //hooks
     // const [pokemonImgUrl, setPokemonImgURL] = useState (""),
@@ -26,15 +26,18 @@ const Card = ({pokemon_name, pokemon_URL, imageURL}) =>{
     //     }, []) ;
         
     return(
-        <LazyLoad height={200} once offset={-100}>
+        <LazyLoad height={200} once offset={-80}>
             <CardWrapper pokemon_image = {imageURL}>
-                <LazyLoad height={200} once offset={-100}>
-                <div className = "card_content">
-                    <div className = "card_image"/>
-                    <div className = "card_info">
-                        <CardInfo pokemon_name = {pokemon_name} />
+                <LazyLoad height={200} once offset={-60}>
+                    <div className = "card_content">
+                        <div className = "card_image"/>
+                        <div className = "card_info">
+                            <CardInfo 
+                                pokemon_name = { pokemon_name } 
+                                searchText = { searchText }
+                            />
+                        </div>
                     </div>
-                </div>
                 </LazyLoad>
             </CardWrapper>   
         </LazyLoad>    

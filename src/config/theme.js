@@ -4,8 +4,7 @@ const colors = {
     green : "#15ad15",
     text: "#f3f6db",
     darkBackground: "#17543d",
-
-
+    backgroundDark: "#143233"
 }
 
 export { colors}

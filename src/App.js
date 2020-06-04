@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 //components
 import { Spinner } from "./components/Spinner";
-import Home from "./containers/Home"
+import Container from "./containers"
  
 //custom components
 import { getALLPokemons } from "./redux/actions/getAllPokemonsAction";
@@ -19,7 +19,7 @@ function App(props) {
   const {getALLPokemons} = props;
 
   useEffect(() => {
-    getALLPokemons(200);  //set load data 200
+    getALLPokemons(100);  //set load data 200
   }, [getALLPokemons]) ;
 
   useEffect (() =>{
@@ -37,7 +37,7 @@ function App(props) {
           <Spinner />
         )
         :
-        <Home allPokemons = {props.pokemons}/>
+        <Container allPokemons = {props.pokemons}/>
       }
       
     </>
