@@ -49,8 +49,8 @@ class SearchModal extends Component {
                     enterAnimation="slideDown"
                     leaveAnimation="slideDown"
                     showCloseButton={false}
-                    width="100%"
-                    height="100%"
+                    // width="100%"
+                    // height="100%"
                     slideUp
                     customStyles={{
                         background: colors.backgroundDark,
@@ -76,6 +76,8 @@ class SearchModal extends Component {
                                 pokemon_name = {pokemon.name}  
                                 imageURL = {pokemon.imageUrl}
                                 searchText={this.state.searchText}
+                                key ={pokemon._id}
+                                _id = {pokemon._id}
                             />
                         </LazyLoad>
                         ))}

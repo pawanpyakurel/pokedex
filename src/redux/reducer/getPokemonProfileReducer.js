@@ -1,34 +1,32 @@
 // actions
 import { 
-    GET_ALL_POKEMONS_REQUEST,
-    GET_ALL_POKEMONS_SUCCESS,
-    GET_ALL_POKEMONS_FAILURE
+    GET_POKEMON_PROFILE_REQUEST,
+    GET_POKEMON_PROFILE_SUCCESS,
+    GET_POKEMON_PROFILE_FAILURE
 } from "../actions/Types";
 
-import { updatePokemons } from "../../utils";
 
 // reducer with initial state
 const initialState = {
     fetching: false,
-    pokemons: null,
     error: null,
+    Profile: null
 };
 
-export const pokemons = (state = initialState, action) => {
+export const pokemonProfile = (state = initialState, action) => {
     switch (action.type) {
-        case GET_ALL_POKEMONS_REQUEST :
+        case GET_POKEMON_PROFILE_REQUEST :
             return {
                 ...state,
                 fetching: true,
             }
-        case GET_ALL_POKEMONS_SUCCESS :
+        case GET_POKEMON_PROFILE_SUCCESS :
             return {
                 ...state,
                 fetching: false,
-                // pokemons: action.resPayload.results,
-                pokemons: updatePokemons (action.resPayload.results)
+                Profile: action.resPayload,
             }
-        case GET_ALL_POKEMONS_FAILURE :
+        case GET_POKEMON_PROFILE_FAILURE :
             return{
                 ...state,
                 fetching: false,

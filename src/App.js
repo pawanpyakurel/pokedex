@@ -4,23 +4,28 @@ import { connect } from "react-redux";
 
 //components
 import { Spinner } from "./components/Spinner";
-import Container from "./containers"
  
 //custom components
 import { getALLPokemons } from "./redux/actions/getAllPokemonsAction";
+
+//routes
+import Routes from "./config/routes";
 
 // styles
 import GlobalStyle from "./App.styles";
 
 function App(props) {
-  
   //hooks
-  const [isLoading, setisLoading] = useState(true)
+  const [isLoading, setisLoading] = useState(true);
+  
   const {getALLPokemons} = props;
 
-  useEffect(() => {
-    getALLPokemons(100);  //set load data 200
-  }, [getALLPokemons]) ;
+  useEffect(() => { 
+    if(!props.pokemons){     //if not avaliable in the local storage then call the backend
+      getALLPokemons(100);
+    }
+  }, []);
+
 
   useEffect (() =>{
     setTimeout(function() { //Start the timer
@@ -29,6 +34,7 @@ function App(props) {
 
   }, [isLoading])
 
+  
   return (
     <>
       <GlobalStyle />
@@ -37,7 +43,7 @@ function App(props) {
           <Spinner />
         )
         :
-        <Container allPokemons = {props.pokemons}/>
+        <Routes />
       }
       
     </>
@@ -45,8 +51,8 @@ function App(props) {
 }
 
 const mapStateToProps = state => ({
-  fetching: state.pokemons.fetching,
   pokemons: state.pokemons.pokemons,
+  fetching: state.pokemons.fetching
 });
 
 export default withRouter(

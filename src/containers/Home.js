@@ -16,7 +16,7 @@ class Home extends Component {
                     {
                         allPokemons && allPokemons.map (pokemon =>
                             pokemon && (
-                                <Card  pokemon_name = {pokemon.name} pokemon_URL = {pokemon.url} imageURL = {pokemon.imageUrl}/>
+                                <Card  pokemon_name = {pokemon.name} key ={pokemon._id} _id = {pokemon._id} imageURL = {pokemon.imageUrl}/>
                             )
                         )
                     }
