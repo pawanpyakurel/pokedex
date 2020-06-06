@@ -8,8 +8,6 @@ const PageNotFound = () => {
            <br />
            Page Not Found
         </div>
-
-  
     );
 };
   

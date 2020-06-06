@@ -18,6 +18,8 @@ const CardWrapper = styled.div `
     &:hover {
         cursor: pointer;
         transform: scale(1.02);
+        text-decoration-line: underline; 
+        text-decoration-color: ${colors.darkBackground};
     }
     .card_content{
         // background : #0b7d03;
@@ -45,6 +47,8 @@ const CardWrapper = styled.div `
         background: ${colors.darkBackground};
         border-bottom-right-radius: 0.7rem;
         border-bottom-left-radius: 0.7rem;
+        text-decoration-line: underline; 
+        text-decoration-color: ${colors.darkBackground};
     }
 
 `;

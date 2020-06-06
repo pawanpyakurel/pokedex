@@ -13,6 +13,7 @@ const ProgressBarWrapper = styled.div`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: center;
     }
     .StatsTitle{
         font-size: 1rem;
@@ -37,7 +38,7 @@ const ProgressMeter = styled.div`
     box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
 
     .ValueWrapper{
-        height: 100%;
+        height: 1rem;
         width: 100%;
         top: -3px;
         position: absolute;

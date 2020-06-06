@@ -6,9 +6,9 @@ import {getPokemonsProfile } from "../../redux/actions/getPokemonProfileAction";
 import { Card } from "../Card";
 import { ProgressBar} from "../ProgressBar";
 import { Types} from "../Types";
+import { Description} from "../Description"
 
 import {DetailsWrapper, DetailsHeader} from "./Details.styles";
-import 'rodal/lib/rodal.css';
 import { FaArrowLeft } from "react-icons/fa";
 
 const Details = (props) => {
@@ -37,6 +37,7 @@ const Details = (props) => {
                         </div>
                         <ProgressBar _id ={props._id}/>
                     </div>
+                    <Description _id ={props._id}/>
                 </div>
             </div>
                 {/* {props.pokemonProfile && props.pokemonProfile.name}

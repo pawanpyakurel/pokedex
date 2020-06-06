@@ -13,6 +13,9 @@ const DetailsHeader = styled.div`
         cursor: pointer;
         color: #FFF;
     }
+    width: 100vw;
+    background: ${colors.darkBackground};
+
 `;
 
 const DetailsWrapper = styled.div `
@@ -28,9 +31,14 @@ const DetailsWrapper = styled.div `
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 6rem;
+        overflow-y: scroll;
+        max-height: 100vh;
+        height: 90vh;
+        align-items: center
     }
    .DetailsBodyWrapper{ 
-        margin-top: 6rem;
+        // margin-top: 6rem;
         padding: 0rem;
         display: flex;
         flex-direction: column;
@@ -38,6 +46,8 @@ const DetailsWrapper = styled.div `
         justify-content: center;
         background: ${colors.backgroundDark};
         padding: 0rem 2rem 2rem 2rem;
+        height: fit-content;
+        overflow: hidden;
     }
 
     .PokemonName{
@@ -49,7 +59,7 @@ const DetailsWrapper = styled.div `
         font-weight: bold;
         padding-bottom: 1rem;
         justify-content: center;
-        text-shadow: 2px 2px #092626;
+        text-shadow: 2px 2px #036f84;
     }
 
     .PokemonInfo{

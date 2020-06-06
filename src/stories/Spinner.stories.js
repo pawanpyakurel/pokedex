@@ -1,14 +1,13 @@
 import React from 'react';
 
+// storybook
+import {storiesOf} from '@storybook/react'
+import {Decorator} from './decorator'
+
+// custom components
 import { Spinner } from "../components/Spinner";
 
-export const SpinnerLoder = () =>(
-    <Spinner />
-)
-
-export default {
-    title: 'Spinner',
-    component: Spinner,
-  };
-
+storiesOf('Spinner',module)
+.addDecorator(Decorator)
+.add('default',()=><Spinner/>)
   

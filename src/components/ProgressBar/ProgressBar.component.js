@@ -54,7 +54,7 @@ const ProgressBar = ({pokemonProfile, pokemonTypes}) => {
             value: specialAttack
         },
         {
-            name: "SA",
+            name: "SD",
             value: specialDefense
         }
 

@@ -6,12 +6,9 @@ import { TYPE_COLORS,colors } from "../../config/theme";
 
 const Types = ({pokemonTypes}) => {
 
-    let themeColor = colors.green;
 
     //types
     const types = pokemonTypes && pokemonTypes.map(type => type.type.name);
-
-    // themeColor = TYPE_COLORS[types && types[types && types.length - 1]];
 
     return (
       <TypesWrapper>
