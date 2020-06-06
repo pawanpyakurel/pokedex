@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import {TypesWrapper} from "./Types.styles";
-import { TYPE_COLORS,colors } from "../../config/theme";
+import { TYPE_COLORS } from "../../config/theme";
 
 const Types = ({pokemonTypes}) => {
 

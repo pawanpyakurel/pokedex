@@ -18,12 +18,14 @@ function App(props) {
   //hooks
   const [isLoading, setisLoading] = useState(true);
   
-  const {getALLPokemons} = props;
 
   useEffect(() => { 
-    if(!props.pokemons){     //if not avaliable in the local storage then call the backend
-      getALLPokemons(100);
+    function getPokemons() {
+      if(!!!props.pokemons){     //if not avaliable in the local storage then call the backend
+        props.getALLPokemons(100);
+      }
     }
+    getPokemons()
   }, []);
 
 

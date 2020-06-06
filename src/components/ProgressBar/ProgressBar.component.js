@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import {ProgressBarWrapper, ProgressMeter} from "./ProgressBar.styles";
@@ -8,28 +8,29 @@ const ProgressBar = ({pokemonProfile, pokemonTypes}) => {
     //progress bar data of hp, attack, defense, speed, specialAttack, specialDefense ;
     let { hp, attack, defense, speed, specialAttack, specialDefense } = '';
     pokemonProfile &&  pokemonProfile.map(stat => {
-        switch (stat.stat.name) {
-          case 'hp':
-            hp = stat['base_stat'];
-            break;
-          case 'attack':
-            attack = stat['base_stat'];
-            break;
-          case 'defense':
-            defense = stat['base_stat'];
-            break;
-          case 'speed':
-            speed = stat['base_stat'];
-            break;
-          case 'special-attack':
-            specialAttack = stat['base_stat'];
-            break;
-          case 'special-defense':
-            specialDefense = stat['base_stat'];
-            break;
-          default:
-            break;
-        }
+      switch (stat.stat.name) {
+        case 'hp':
+          hp = stat['base_stat'];
+          break;
+        case 'attack':
+          attack = stat['base_stat'];
+          break;
+        case 'defense':
+          defense = stat['base_stat'];
+          break;
+        case 'speed':
+          speed = stat['base_stat'];
+          break;
+        case 'special-attack':
+          specialAttack = stat['base_stat'];
+          break;
+        case 'special-defense':
+          specialDefense = stat['base_stat'];
+          break;
+        default:
+          break;
+      }
+      return stat;
     });
 
     const progressStateList = [

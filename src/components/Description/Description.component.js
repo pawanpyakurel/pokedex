@@ -19,6 +19,7 @@ const Description = (props) => {
             description = des.flavor_text;
             return;
         }
+        else return null;
     })
 
     console.log(props, "props data in the description")

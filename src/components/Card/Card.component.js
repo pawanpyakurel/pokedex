@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
 
@@ -25,15 +25,6 @@ const Card = ({pokemon_name, imageURL, searchText, _id,}) =>{
     //     setPokemonImgURL(imageUrl);
     //     setPokemonName(pokemon_name);
     //     }, []) ;
-        
-    const [isShowDetail, setisShowDetail] = useState (false);
-
-    const showDetail = () =>{
-        setisShowDetail(true);
-    }
-    const hideDetail = () =>{
-        setisShowDetail(false);
-    }
 
     const imageLink = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${_id}.png?raw=true`;
 
@@ -43,7 +34,7 @@ const Card = ({pokemon_name, imageURL, searchText, _id,}) =>{
             !!imageURL ? 
                 <Link to={`/details/${_id}`}> 
                     <LazyLoad height={200} once offset={-50}>
-                        <CardWrapper pokemon_image = {imageURL} onClick = {showDetail}>
+                        <CardWrapper pokemon_image = {imageURL} >
                             <LazyLoad height={200} once offset={-60}>
                                 <div className = "card_content">
                                     <div className = "card_image"/>
